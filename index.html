@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>書店地圖</title>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Amiri" rel="stylesheet">
+    <script>
+    $(function() {
+      $('#sliderNav li').hover(function(e){
+          var linkIndex = $(this).index();
+          $('#sliderContent img').removeClass('active');
+          $('#sliderContent img:eq('+linkIndex+')').addClass('active');
+      });
+    });
+    </script>
+</head>
+<body>
+    <div id="imgSlider">
+        <div id="sliderContent">
+            <ul>
+                <li>
+                    <img class="active" src="img/n30s-01.png">
+                </li>
+                <li>
+                    <img src="img/n40s-01.png">
+                </li>
+                <li>
+                    <img src="img/n50s-01.png">
+                </li>
+                <li>
+                    <img src="img/n60s-01.png">
+                </li>
+                <li>
+                    <img src="img/n70s-01.png">
+                </li>
+                <li>
+                    <img src="img/80s-01.png">
+                </li>
+                <li>
+                    <img src="img/90s-02.png">
+                </li>
+                <li>
+                    <img src="img/%E7%8F%BE%E9%87%91-01.png">
+                </li>
+            </ul>
+        </div>
+        <div id="sliderNav">
+            <ul>
+                <li>
+                    <div class="link" id="link30">30s</div>
+                </li>
+                <li>
+                    <div class="link" id="link40">40s</div>
+                </li>
+                <li>
+                    <div class="link" id="link50">50s</div>
+                </li>
+                <li>
+                    <div class="link" id="link60">60s</div>
+                </li>
+                <li>
+                    <div class="link" id="link70">70s</div>
+                </li>
+                <li>
+                    <div class="link" id="link80">80s</div>
+                </li>
+                <li>
+                    <div class="link" id="link90">90s</div>
+                </li>
+                <li>
+                    <div class="link" id="linknow">now</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+
+<style>
+    #sliderContent {
+        width: 100vw;
+        height: 32vw;
+        overflow: hidden;
+        margin-bottom: 15px;
+    }
+
+    #sliderContent img {
+        width: 100%;
+        position: absolute;
+    }
+    
+    #sliderContent ul{
+        background: #eeefef;
+        overflow: hidden;
+        width: 100%;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    #sliderContent img.active{
+        animation: fadein 2s;
+        -moz-animation: fadein 2s; 
+        -webkit-animation: fadein 2s; 
+        -o-animation: fadein 2s; 
+    }
+    
+    #sliderContent img:not(.active) {
+        opacity: 0;
+        animation: fadeout 2s;
+        -moz-animation: fadeout 2s; 
+        -webkit-animation: fadeout 2s; 
+        -o-animation: fadeout 2s; 
+    }
+    
+    #sliderNav ul{
+        list-style-type: none;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        font-family: 'Amiri', serif;
+    }
+    
+    #sliderNav li {
+        display: inline;
+        line-height:40px;
+    }
+    
+    .link{
+        font-size: 17px;
+        text-align:center;
+        line-height:40px;
+        color:#ffffff;
+        margin: 10px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: inline-block;
+    }
+    
+    .link:hover{
+       background: #eeefef !important;
+    }
+    
+    #link30 {
+        background: #8aa541;
+    }
+    #link40 {
+        background: #1c9533;
+    }
+    #link50 {
+        background: #44b99b;
+    }
+    #link60 {
+        background: #85cbbd;
+    }
+    #link70 {
+        background: #00a2b9;
+    }
+    #link80 {
+        background: #32bbda;
+    }
+    #link90 {
+        background: #6783c1;
+    }
+    #linknow {
+        background: #517abc;
+    }
+        
+    /*fadein effect*/
+    @keyframes fadein {
+        from {
+            opacity:0;
+        }
+        to {
+            opacity:1;
+        }
+    }
+    @-moz-keyframes fadein { /* Firefox */
+        from {
+            opacity:0;
+        }
+        to {
+            opacity:1;
+        }
+    }
+    @-webkit-keyframes fadein { /* Safari and Chrome */
+        from {
+            opacity:0;
+        }
+        to {
+            opacity:1;
+        }
+    }
+    @-o-keyframes fadein { /* Opera */
+        from {
+            opacity:0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes fadeout {
+        from {
+            opacity:1;
+        }
+        to {
+            opacity:0;
+        }
+    }
+    @-moz-keyframes fadeout { /* Firefox */
+        from {
+            opacity:1;
+        }
+        to {
+            opacity:0;
+        }
+    }
+    @-webkit-keyframes fadeout { /* Safari and Chrome */
+        from {
+            opacity:1;
+        }
+        to {
+            opacity:0;
+        }
+    }
+    @-o-keyframes fadeout { /* Opera */
+        from {
+            opacity:1;
+        }
+        to {
+            opacity:0;
+        }
+    }
+</style>
